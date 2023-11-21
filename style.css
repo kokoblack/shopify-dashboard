@@ -23,7 +23,7 @@ body {
   box-sizing: border-box;
 }
 
-.nav_logo > img:last-child {
+.nav_logo > svg:last-child {
   display: none;
 }
 
@@ -123,11 +123,11 @@ body {
     width: 15rem;
   }
 
-  .nav_logo > img:first-child {
+  .nav_logo > svg:first-child {
     display: none;
   }
 
-  .nav_logo > img:last-child {
+  .nav_logo > svg:last-child {
     display: block;
   }
 
@@ -175,7 +175,7 @@ body {
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 310px) {
   .nav_search {
     width: 55%;
   }
@@ -194,6 +194,7 @@ body {
   position: fixed;
   top: 4.5rem;
   right: 1rem;
+  display: none;
 }
 
 hr {
@@ -278,3 +279,117 @@ hr {
   border: 2px solid #005bd3;
   padding: .5rem 0;
 } */
+
+@media screen and (max-width: 480px) {
+  .menu {
+    width: 18rem;
+    right: 0.8rem;
+  }
+
+  .menu p {
+    font-size: 0.8rem;
+  }
+
+  .menu_section1-stories > svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .menu_section2 {
+    margin: 0.6rem 0;
+    gap: 1.3rem;
+  }
+
+  .menu_section3 {
+    margin: 0.6rem 0;
+    gap: 1.3rem;
+  }
+
+  .menu_section3-email > p:last-child {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .menu {
+    width: 15rem;
+    right: 0.6rem;
+  }
+}
+
+/* notification menu */
+.notification_menu {
+  border-radius: 0.875rem;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  width: fit-content;
+
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+}
+
+.notification_menu-section {
+  display: flex;
+  align-items: center;
+}
+
+.notification_menu-section > p {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.notification_menu-icons {
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+}
+
+.notification_menu-icons > svg {
+  box-sizing: border-box;
+}
+
+.notification_menu-icons > svg:hover {
+  border: 1px solid #005bd3;
+  border-radius: 0.3rem;
+}
+
+.notification_menu > p {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  color: #616161;
+  padding: 1rem;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .notification_menu {
+    right: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 70vw;
+    padding: 0.5rem;
+  }
+
+  .notification_menu-section > p {
+    font-size: 0.8rem;
+  }
+
+  .notification_menu-icons > svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .notification_menu > p {
+    font-size: 0.7rem;
+    padding: 0.5rem;
+  }
+}
