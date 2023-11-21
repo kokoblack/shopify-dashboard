@@ -102,7 +102,7 @@ body {
 
 .nav_button > p {
   margin: 0;
-  color: #b5b5b5;
+  color: rgba(227, 227, 227, 1);
 }
 
 .nav_button p:last-child {
@@ -193,12 +193,11 @@ body {
 
   position: fixed;
   top: 4.5rem;
-  right: 1rem;
+  left: 1rem;
   display: none;
 }
 
 hr {
-  /* background-color: rgba(225, 225, 225, 1); */
   border: 0.5px solid rgba(225, 225, 225, 1);
 }
 
@@ -228,10 +227,6 @@ hr {
   margin-left: auto;
   color: rgba(48, 48, 48, 1);
 }
-
-/* .menu_section1-dc > P {
-  margin: 0;
-} */
 
 .menu_section1-dc > p:first-child {
   background-color: #36fba1;
@@ -273,12 +268,6 @@ hr {
   color: #616161;
   font-size: 0.8rem;
 }
-
-/* .test {
-  border-radius: 0.5rem;
-  border: 2px solid #005bd3;
-  padding: .5rem 0;
-} */
 
 @media screen and (max-width: 480px) {
   .menu {
@@ -329,6 +318,7 @@ hr {
   position: fixed;
   top: 4.5rem;
   right: 1rem;
+  display: none;
 }
 
 .notification_menu-section {
@@ -391,5 +381,75 @@ hr {
   .notification_menu > p {
     font-size: 0.7rem;
     padding: 0.5rem;
+  }
+}
+
+/* Traial plan */
+.trial_plan {
+  margin: 0 auto;
+  display: flex;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #1a1a1a;
+  margin-top: 1rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.trial_plan > p {
+  color: #e3e3e3;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  margin-right: 10rem;
+}
+
+.trial_plan > button {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: .75rem;
+  padding: 0.375rem 0.75rem;
+  align-items: center;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
+  cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+  .trial_plan {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .8rem;
+    padding: 1rem;
+  }
+
+  .trial_plan > svg {
+    position: absolute;
+    top: 1rem;
+    right: .5rem;
+  }
+
+  .trial_plan > p {
+    margin: 0;
+    margin-right: 3rem;
+    line-height: 1.1375rem;
+
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .trial_plan  {
+    border-radius: 0;
+    margin-top: 1rem;
+    width: 100%;
   }
 }
