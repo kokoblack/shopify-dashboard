@@ -3,6 +3,7 @@
 body {
   margin: 0;
   padding: 0;
+  padding-bottom: 2rem;
   scroll-behavior: smooth;
   min-width: 100%;
   max-width: 1440px;
@@ -78,7 +79,8 @@ body {
 
 .nav_notification > svg {
   border-radius: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.45rem;
+  cursor: pointer;
   background-color: #303030;
 }
 
@@ -94,6 +96,7 @@ body {
   padding: 0.1rem 0.1rem 0.1rem 0.5rem;
   background-color: #303030;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
 .nav_button:hover {
@@ -388,7 +391,7 @@ hr {
 .trial_plan {
   margin: 0 auto;
   display: flex;
-  width: fit-content;
+  width: 46rem;
   padding: 0.5rem 1rem;
   justify-content: space-between;
   align-items: center;
@@ -412,7 +415,7 @@ hr {
   display: flex;
   font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: .75rem;
+  font-size: 0.75rem;
   padding: 0.375rem 0.75rem;
   align-items: center;
   border-radius: 0.375rem;
@@ -422,34 +425,240 @@ hr {
   cursor: pointer;
 }
 
-@media screen and (max-width:768px) {
+.trial_plan > button:hover {
+  background-color: #F7F7F7;
+}
+
+.trial_plan > svg {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
   .trial_plan {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: .8rem;
+    width: 90vw;
+    gap: 0.8rem;
     padding: 1rem;
   }
 
   .trial_plan > svg {
     position: absolute;
     top: 1rem;
-    right: .5rem;
+    right: 0.5rem;
   }
 
   .trial_plan > p {
     margin: 0;
     margin-right: 3rem;
     line-height: 1.1375rem;
-
   }
 }
 
-
 @media screen and (max-width: 480px) {
-  .trial_plan  {
+  .trial_plan {
     border-radius: 0;
     margin-top: 1rem;
     width: 100%;
+  }
+}
+
+/* setup guide */
+.setup_guide {
+  padding: 1rem 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 46rem;
+  border-radius: 1.125rem;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.setup_guide-section1 {
+  padding: 0 1rem;
+}
+
+.setup_guide-section1 > h3 {
+  margin: 0;
+  color: #303030;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.setup_guide-section1 > p {
+  color: #303030;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1375rem;
+}
+
+.setup_guide-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.setup_guide-progress > p {
+  color: #303030;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+input[type="range"] {
+  box-shadow: 0px 0px 0px #000000;
+  height: 5px;
+  width: 80px;
+  border-radius: 25px;
+  cursor: pointer;
+  background: #f3f3f3;
+  border-radius: 5px;
+  background-image: linear-gradient(#000, #000);
+  background-size: 20% 100%;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0;
+  width: 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.setup_guide > svg {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.setup_guide > svg:hover {
+  background-color: #E0E0E0;
+  border-radius: 0.3rem;
+}
+
+.setup_guide-section2 {
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.setup_guide-tasks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.setup_guide-tasks > svg {
+  cursor: pointer;
+}
+
+.setup_guide-tasks > p {
+  color: #303030;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1375rem;
+}
+
+.setup_guide-tasks_view {
+  padding: 0 1rem 1rem 3rem;
+}
+
+.setup_guide-tasks_view > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.setup_guide-tasks_view > button {
+  border-radius: 0.375rem;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.2);
+  background-color: #404040;
+  box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333,
+    0px 2px 0px 0px #000;
+  padding: 0.375rem 0.75rem;
+
+  color: #f6f3f6;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.setup_guide-tasks_view > button:hover {
+  background-color: #2A2A2A;
+}
+
+.setup_guide-tasks_view_text > p {
+  color: #616161;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1375rem;
+  margin: 0;
+}
+
+.setup_guide-tasks_view_link {
+  color: #005bd3;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1375rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.setup_guide-tasks_view_img {
+  width: 7rem;
+  height: 5rem;
+}
+
+.active {
+  background-color: #f3f3f3;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.625rem;
+}
+
+@media screen and (max-width: 768px) {
+  .setup_guide {
+    width: 90vw;
+  }
+
+  .setup_guide-tasks_view_img  {
+    display: none;
+  }
+
+  .setup_guide-tasks_view_text{
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .setup_guide {
+    width: 100%;
+    border-radius: 0;
   }
 }
