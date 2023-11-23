@@ -24,8 +24,10 @@ body {
   box-sizing: border-box;
 }
 
-.nav_logo > svg:last-child {
+.nav_logo > a:last-child {
   display: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .nav_search {
@@ -77,14 +79,14 @@ body {
   gap: 0.5rem;
 }
 
-.nav_notification > svg {
+.nav_notification-svg {
   border-radius: 0.5rem;
   padding: 0.45rem;
   cursor: pointer;
   background-color: #303030;
 }
 
-.nav_notification > svg:hover {
+.nav_notification-svg:hover {
   background-color: #656266;
 }
 
@@ -93,10 +95,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.1rem 0.1rem 0.1rem 0.5rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.5rem;
   background-color: #303030;
   border-radius: 0.5rem;
   cursor: pointer;
+  border: 0;
 }
 
 .nav_button:hover {
@@ -104,13 +107,15 @@ body {
 }
 
 .nav_button > p {
+  font-size: 0.8rem;
+  font-family: "Inter", sans-serif;
   margin: 0;
   color: rgba(227, 227, 227, 1);
 }
 
 .nav_button p:last-child {
   background-color: #36fba1;
-  padding: 0.5rem;
+  padding: 0.6rem 0.5rem;
   border-radius: 0.375rem;
   color: rgba(0, 0, 0, 0.4);
 }
@@ -126,11 +131,13 @@ body {
     width: 15rem;
   }
 
-  .nav_logo > svg:first-child {
+  .nav_logo > a:first-child {
     display: none;
+    text-decoration: none;
+    cursor: pointer;
   }
 
-  .nav_logo > svg:last-child {
+  .nav_logo > a:last-child {
     display: block;
   }
 
@@ -152,7 +159,7 @@ body {
     height: 2rem;
   }
 
-  .nav_notification > svg {
+  .nav_notification-svg {
     width: 20px;
     height: 20px;
     background-color: transparent;
@@ -161,7 +168,7 @@ body {
 
   .nav_button > p:last-child {
     font-size: 0.8rem;
-    padding: 0.4rem;
+    padding: 0.5rem 0.4rem;
   }
 
   .nav_search {
@@ -196,8 +203,9 @@ body {
 
   position: fixed;
   top: 4.5rem;
-  left: 1rem;
+  right: 1rem;
   display: none;
+  z-index: 10;
 }
 
 hr {
@@ -242,25 +250,50 @@ hr {
 .menu_section1-stories {
   padding: 0.5rem;
   display: flex;
+  margin-top: .5rem;
   /* justify-content: center; */
   align-items: center;
   gap: 0.5rem;
 }
 
+.menu_section1-stories:hover {
+  background-color: #E7E7E7;
+  border-radius: .5rem;
+}
+
 .menu_section2 {
-  margin: 0.8rem 0;
-  padding-left: 0.7rem;
+  /* margin: 0.8rem 0; */
+  padding: 0 0.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: .3rem;
+}
+
+.menu_section2 > p{
+  padding: .8rem;
+
+}
+
+.menu_section2 > p:hover {
+  background-color: #E7E7E7;
+  border-radius: .5rem;
 }
 
 .menu_section3 {
-  margin: 0.8rem 0;
-  padding-left: 0.7rem;
+  margin: 0.5rem 0 0 0;
+  padding: 0 0.4rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: .3rem;
+}
+
+.menu_section3-email {
+  padding: .4rem .8rem;
+}
+
+.menu_section3-email:hover {
+  background-color: #E7E7E7;
+  border-radius: .5rem;
 }
 
 .menu_section3-email > p:first-child {
@@ -272,9 +305,18 @@ hr {
   font-size: 0.8rem;
 }
 
+.menu_section3 > p {
+  padding: .8rem;
+}
+
+.menu_section3 > p:hover {
+  background-color: #E7E7E7;
+  border-radius: .5rem;
+}
+
 @media screen and (max-width: 480px) {
   .menu {
-    width: 18rem;
+    width: 85vw;
     right: 0.8rem;
   }
 
@@ -289,23 +331,16 @@ hr {
 
   .menu_section2 {
     margin: 0.6rem 0;
-    gap: 1.3rem;
+    /* gap: 1.3rem; */
   }
 
   .menu_section3 {
     margin: 0.6rem 0;
-    gap: 1.3rem;
+    /* gap: 1.3rem; */
   }
 
   .menu_section3-email > p:last-child {
     font-size: 0.6rem;
-  }
-}
-
-@media screen and (max-width: 310px) {
-  .menu {
-    width: 15rem;
-    right: 0.6rem;
   }
 }
 
@@ -322,6 +357,7 @@ hr {
   top: 4.5rem;
   right: 1rem;
   display: none;
+  z-index: 10;
 }
 
 .notification_menu-section {
@@ -346,10 +382,11 @@ hr {
 
 .notification_menu-icons > svg {
   box-sizing: border-box;
+  padding: .1rem;
 }
 
 .notification_menu-icons > svg:hover {
-  border: 1px solid #005bd3;
+  background-color: #E7E7E7;
   border-radius: 0.3rem;
 }
 
@@ -368,7 +405,7 @@ hr {
     right: 0;
     left: 50%;
     transform: translatex(-50%);
-    width: 70vw;
+    width: 80vw;
     padding: 0.5rem;
   }
 
@@ -384,6 +421,7 @@ hr {
   .notification_menu > p {
     font-size: 0.7rem;
     padding: 0.5rem;
+    color: #303030;
   }
 }
 
@@ -423,6 +461,11 @@ hr {
   background: #fff;
   box-shadow: 0px -1px 0px 0px #b5b5b5 inset;
   cursor: pointer;
+}
+
+.trial_plan-link {
+  text-decoration: none;
+  color: #323232;
 }
 
 .trial_plan > button:hover {
@@ -522,7 +565,7 @@ input[type="range"] {
   background: #f3f3f3;
   border-radius: 5px;
   background-image: linear-gradient(#000, #000);
-  background-size: 20% 100%;
+  background-size: 0%;
   background-repeat: no-repeat;
   -webkit-appearance: none;
 }
@@ -541,7 +584,8 @@ input[type="range"]::-webkit-slider-runnable-track {
   background: transparent;
 }
 
-.setup_guide > svg {
+.toggle_setup_guide {
+  display: flex;
   position: absolute;
   top: 0.8rem;
   right: 1rem;
@@ -549,9 +593,13 @@ input[type="range"]::-webkit-slider-runnable-track {
   box-sizing: border-box;
 }
 
-.setup_guide > svg:hover {
+.toggle_setup_guide:hover {
   background-color: #E0E0E0;
   border-radius: 0.3rem;
+}
+
+.setup_guide-close {
+  display: none;
 }
 
 .setup_guide-section2 {
@@ -565,10 +613,19 @@ input[type="range"]::-webkit-slider-runnable-track {
   align-items: center;
   gap: 1rem;
   padding: 0 0.5rem;
+  cursor: pointer;
 }
 
 .setup_guide-tasks > svg {
   cursor: pointer;
+}
+
+.setup_guide-tasks_icon1 {
+  display: flex;
+}
+
+.setup_guide-tasks_icon2 {
+  display: none;
 }
 
 .setup_guide-tasks > p {
@@ -577,6 +634,31 @@ input[type="range"]::-webkit-slider-runnable-track {
   font-style: normal;
   font-weight: 500;
   line-height: 1.1375rem;
+  width: 100%;
+  /* margin: 0; */
+}
+
+.setup_guide-tasks_icon_container {
+  display: flex;
+}
+
+.tickGuide_icon1 {
+  z-index: 2;
+  transition: all ease-in .15s;
+}
+
+.tickGuide_icon2 {
+  z-index: 4;
+  transition: all ease-in .15s;
+}
+
+.tickGuide_icon3 {
+  /* display: flex; */
+  z-index: 6;
+  background-color: #000000;
+  padding: .15rem;
+  border-radius: 100%;
+  transition: all ease-in .5s;
 }
 
 .setup_guide-tasks_view {
@@ -640,6 +722,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0.625rem;
+  /* margin: .5rem 0; */
 }
 
 @media screen and (max-width: 768px) {
@@ -661,4 +744,22 @@ input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     border-radius: 0;
   }
+}
+
+
+/* miscellinus */
+.show {
+  display: block;
+}
+
+.bgColor {
+  background-color: #656266;
+}
+
+.admin {
+  cursor: pointer;
+}
+
+.close {
+  display: none;
 }
