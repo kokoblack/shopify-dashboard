@@ -656,7 +656,7 @@ input[type="range"]::-webkit-slider-runnable-track {
   /* display: flex; */
   z-index: 6;
   background-color: #000000;
-  padding: .15rem;
+  padding: .185rem;
   border-radius: 100%;
   transition: all ease-in .5s;
 }

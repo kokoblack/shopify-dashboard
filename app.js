@@ -27,12 +27,6 @@ const showGuideView = Array.from(
 );
 const getActive = Array.from(document.getElementsByClassName("getActive"));
 
-toggleGuide.addEventListener("click", function () {
-  setupGuide.classList.toggle("close");
-  toggleShowGuide[0].classList.toggle("show");
-  toggleShowGuide[1].classList.toggle("close");
-});
-
 const showpanel = (button, panel, panel2, button2) => {
   button.classList.toggle("bgColor");
   panel.classList.toggle("show");
@@ -44,6 +38,12 @@ const showpanel = (button, panel, panel2, button2) => {
     button2.classList.remove("bgColor");
   }
 };
+
+toggleGuide.addEventListener("click", function () {
+  setupGuide.classList.toggle("close");
+  toggleShowGuide[0].classList.toggle("show");
+  toggleShowGuide[1].classList.toggle("close");
+});
 
 notification.addEventListener("click", function () {
   showpanel(notification, notificationPanel, profilePanel, profile);
@@ -64,10 +64,14 @@ for (const dom of admin) {
 }
 
 icon1.forEach((dom, i) => {
-  dom.addEventListener("mouseover", function () {
-    icon1[i].classList.add("close");
-    icon2[i].classList.add("show");
-  });
+  const is_touch_device = "ontouchstart" in document.documentElement;
+
+  if (!is_touch_device) {
+    dom.addEventListener("mouseover", function () {
+      icon1[i].classList.add("close");
+      icon2[i].classList.add("show");
+    });
+  }
 });
 
 icon2.forEach((dom, i) => {
